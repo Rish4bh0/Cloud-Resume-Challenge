@@ -8,6 +8,8 @@ import { GlobeIcon, MailIcon, NetworkIcon, PhoneIcon, WebcamIcon } from "lucide-
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
+import Head from "next/head";
+import VisitorCounter from "../components/visitorcounter";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -20,6 +22,12 @@ export default function Page() {
       <section className="mx-auto w-full max-w-xl space-y-3 bg-white print:space-y-2">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-0.5">
+          <div>
+      <Head>
+        <title>Cloud Resume - Visitor Counter</title>
+      </Head>
+      <VisitorCounter />
+    </div>
             <h1 className="inline-flex items-center justify-center gap-x-1 leading-none text-2xl font-bold">
             <a className="hover:underline" href={RESUME_DATA.name}>
                         {RESUME_DATA.name}

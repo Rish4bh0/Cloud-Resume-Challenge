@@ -13,6 +13,7 @@ import (
 
 func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	pageID := req.QueryStringParameters["pageId"]
+	fmt.Printf("Page ID: %s\n", pageID)
 	if pageID == "" {
 		return events.APIGatewayProxyResponse{
 			StatusCode: http.StatusBadRequest,
