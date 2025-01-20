@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -5,38 +6,32 @@ type VisitorResponse = {
   count: number; 
 };
 
-
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch visitor count from the API
-  const fetchVisitorCount = async () => {
+  // Fetch visitor count from the API and increment it
+  const fetchAndIncrementVisitorCount = async () => {
     try {
       setLoading(true);
+
+      // Increment the visitor count by making a POST request
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`);
+
+      // Fetch the updated visitor count
       const response = await axios.get<VisitorResponse>(
         `${process.env.NEXT_PUBLIC_API_URL}`
       );
       setVisitorCount(response.data.count);
     } catch (error) {
-      console.error("Error fetching visitor count:", error);
+      console.error("Error fetching and incrementing visitor count:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  // Increment visitor count
-  const incrementVisitorCount = async () => {
-    try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`);
-      fetchVisitorCount(); // Refresh count after incrementing
-    } catch (error) {
-      console.error("Error incrementing visitor count:", error);
-    }
-  };
-
   useEffect(() => {
-    fetchVisitorCount();
+    fetchAndIncrementVisitorCount();
   }, []);
 
   return (
@@ -47,9 +42,6 @@ const VisitorCounter = () => {
       ) : (
         <>
           <p>Number of visitors: {visitorCount}</p>
-          <button onClick={incrementVisitorCount} style={{ padding: "10px 20px", fontSize: "16px" }}>
-            Increase Visitor Count
-          </button>
         </>
       )}
     </div>
