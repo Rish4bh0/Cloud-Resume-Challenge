@@ -20,7 +20,7 @@ func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (eve
 		}, nil
 	}
 
-	tableName := os.Getenv("VisitorCount")
+	tableName := os.Getenv("DYNAMODB_TABLE")
 
 	// Retrieve visitor count
 	visitorCount, err := utils.GetVisitorCount(tableName, pageID)
