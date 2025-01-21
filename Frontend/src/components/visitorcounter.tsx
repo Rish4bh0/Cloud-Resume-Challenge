@@ -3,26 +3,27 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 type VisitorResponse = {
-  count: number; 
+  visitorCount: number;
 };
 
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch visitor count from the API and increment it
+  // Fetch visitor count and increment it with a GET request
   const fetchAndIncrementVisitorCount = async () => {
     try {
       setLoading(true);
 
-      // Increment the visitor count by making a POST request
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`);
-
-      // Fetch the updated visitor count
+      // Send the GET request which will both increment and return the updated visitor count
       const response = await axios.get<VisitorResponse>(
-        `${process.env.NEXT_PUBLIC_API_URL}`
+        `https://6l9qf0a8kj.execute-api.us-east-1.amazonaws.com/start?pageId=homepage`
       );
-      setVisitorCount(response.data.count);
+      
+
+      
+      setVisitorCount(response.data.visitorCount); // Update the state with the visitor count
+     
     } catch (error) {
       console.error("Error fetching and incrementing visitor count:", error);
     } finally {
@@ -31,8 +32,8 @@ const VisitorCounter = () => {
   };
 
   useEffect(() => {
-    fetchAndIncrementVisitorCount();
-  }, []);
+    fetchAndIncrementVisitorCount(); // Call the function on component mount
+  }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>

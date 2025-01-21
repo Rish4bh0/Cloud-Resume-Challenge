@@ -18,6 +18,9 @@ func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (eve
 		return events.APIGatewayProxyResponse{
 			StatusCode: http.StatusBadRequest,
 			Body:       "Missing 'pageId' query parameter",
+			Headers: map[string]string{
+				"Access-Control-Allow-Origin": "*", // Allow requests from any origin, adjust to your needs
+			},
 		}, nil
 	}
 
@@ -29,6 +32,9 @@ func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (eve
 		return events.APIGatewayProxyResponse{
 			StatusCode: http.StatusInternalServerError,
 			Body:       fmt.Sprintf("Error retrieving visitor count: %v", err),
+			Headers: map[string]string{
+				"Access-Control-Allow-Origin": "*", // Allow requests from any origin, adjust to your needs
+			},
 		}, nil
 	}
 
@@ -39,6 +45,9 @@ func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (eve
 		return events.APIGatewayProxyResponse{
 			StatusCode: http.StatusInternalServerError,
 			Body:       fmt.Sprintf("Error updating visitor count: %v", err),
+			Headers: map[string]string{
+				"Access-Control-Allow-Origin": "*", // Allow requests from any origin, adjust to your needs
+			},
 		}, nil
 	}
 
@@ -47,6 +56,11 @@ func VisitorHandler(ctx context.Context, req events.APIGatewayProxyRequest) (eve
 	return events.APIGatewayProxyResponse{
 		StatusCode: http.StatusOK,
 		Body:       string(respJSON),
-		Headers:    map[string]string{"Content-Type": "application/json"},
+		Headers: map[string]string{
+			"Content-Type":                 "application/json",
+			"Access-Control-Allow-Origin":  "*",                           // Allow requests from any origin, adjust to your needs
+			"Access-Control-Allow-Methods": "GET, POST, OPTIONS",          // Allow GET, POST, and OPTIONS methods
+			"Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow headers you need
+		},
 	}, nil
 }
