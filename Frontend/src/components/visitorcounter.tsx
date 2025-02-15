@@ -36,13 +36,13 @@ const VisitorCounter = () => {
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Visitor Counter</h1>
+    <div style={{ textAlign: "center", marginTop: 'auto' }}>
+   
       {loading ? (
         <p>Loading...</p>
       ) : (
         <>
-          <p>Number of visitors: {visitorCount}</p>
+          <p>Visitors: {visitorCount}</p>
         </>
       )}
     </div>

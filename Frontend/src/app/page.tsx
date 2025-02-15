@@ -21,18 +21,14 @@ export default function Page() {
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-16 md:p-16">
       <section className="mx-auto w-full max-w-xl space-y-3 bg-white print:space-y-2">
         <div className="flex items-center justify-between">
+       
           <div className="flex-1 space-y-0.5">
           <div>
-      <Head>
-        <title>Cloud Resume - Visitor Counter</title>
-      </Head>
-      <VisitorCounter />
     </div>
             <h1 className="inline-flex items-center justify-center gap-x-1 leading-none text-2xl font-bold">
             <a className="hover:underline" href={RESUME_DATA.name}>
                         {RESUME_DATA.name}
                       </a>
-
                       <span className="inline-flex gap-x-1">
                       
                           <Badge
@@ -41,10 +37,12 @@ export default function Page() {
                            
                           >
                             {RESUME_DATA.role}
+                           
                           </Badge>
                       
                       </span>
             </h1>
+           
             
             {/*
            <p className="max-w-full text-pretty font-mono text-sm text-muted-foreground print:text-[11px]">
