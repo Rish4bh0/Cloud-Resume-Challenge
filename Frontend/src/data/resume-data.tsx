@@ -8,12 +8,12 @@ import { InstagramIcon } from "lucide-react";
 
 export const RESUME_DATA = {
   name: "Rishabh Singh",
-  role: "Full Stack Developer",
+  role: "Software Engineer",
   initials: "RS",
   location: "Falls Church,VA",
   locationLink: "https://www.google.com/maps/place/Falls+Church,+VA,+USA",
   about:
-    "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
+    "A proactive and detail-oriented Software Engineer specializing in cloud computing and back-end development. Experienced in designing, implementing, and optimizing scalable cloud-based solutions. Skilled at project coordination, system performance optimization, and ensuring compliance with best practices. Adept at managing resources, mitigating risks, and delivering technical solutions on time and within budget. Proficient in leveraging cloud technologies to enhance system reliability, security, and efficiency.",
   
     mail:
     "mail@rishabhsingh.com.np",
@@ -22,7 +22,7 @@ export const RESUME_DATA = {
     "https://rishabhsingh.com.np",
     webLink: "https://rishabhsingh.com.np",
   summary:
-    "Full Stack Developer with 2 year's experience in React, React Native, Node.js, PostgreSQL, MongoDB, Docker, and Kubernetes. Proficient in real-time features, performance optimization, and DevOps practices. Strong collaborator committed to delivering high-quality solutions and continuous learning.",
+    "A proactive and detail-oriented Software Engineer specializing in cloud computing and back-end development. Experienced in designing, implementing, and optimizing scalable cloud-based solutions. Skilled at project coordination, system performance optimization, and ensuring compliance with best practices. Adept at managing resources, mitigating risks, and delivering technical solutions on time and within budget. Proficient in leveraging cloud technologies to enhance system reliability, security, and efficiency.",
   avatarUrl: "",
   personalWebsiteUrl: "https://rishabhsingh.com.np",
   contact: {
@@ -49,8 +49,8 @@ export const RESUME_DATA = {
   education: [
     {
       school: "London Metropolitan University",
-      degree: "Bsc (Hons) Computing, Grade: First Class Honours",
-      courseWork:"Coursework: Operating Systems; Databases; Algorithms; Computer Architecture; Logic and problem solving; Software Engineering; Information Systems; Artificial Intelligence.",
+      degree: "Bsc (Hons) Computing, GPA: 3.74/4",
+      //courseWork:"Coursework: Operating Systems; Databases; Algorithms; Computer Architecture; Logic and problem solving; Software Engineering; Information Systems; Artificial Intelligence.",
       start: "01/2021",
       end: "06/2023",
     },
@@ -59,35 +59,34 @@ export const RESUME_DATA = {
     {
       company: "Dryice Solutions",
       link: "https://dryicesolutions.net",
-      badges: ["Kumaripati, Lalitpur"],
-      title: "Fullstack Developer",
+      badges: ["Nepal"],
+      title: "Software Engineer",
       logo: ConsultlyLogo,
       start: "08/2023",
       end: null,
       description:
-        "Designed and managed a ticketing system with real-time features, reducing issue resolution time by 30%. Implemented automation with Docker, Kubernetes, Argo CD, GitLab CI/CD, and GitHub Actions increasing deployment efficiency by 50%. Supported a SaaS product with 99.9% uptime and resolved issues promptly. Built RESTful APIs and maintained websites, boosting user engagement by 25%. Optimized performance, achieving a 35% reduction in load times.",
+        "Migrated applications to cloud platforms, enhancing performance, scalability, and cost-effectiveness using AWS services like EC2, S3, RDS, and Lambda. Developed CI/CD pipelines with GitHub Actions to automate testing, integration, and deployment while implementing AWS CloudWatch and Prometheus for proactive application monitoring and issue resolution. Provided technical assistance and maintenance for the Line Ministry Budget Information System (LMBIS) to ensure smooth operation and effective budget management for the Ministry of Finance (MoF), Nepal. Additionally, designed and built a help desk application using React, Node.js, and TailwindCSS, integrating RESTful APIs for seamless data handling, Socket.IO for real-time functionality, and AWS for deployment.",
     },
     {
       company: "Featherwebs",
       link: "https://featherwebs.com/",
-      badges: ["Kupondole, Lalitpur"],
-      title: "React Intern",
+      badges: ["Remote"],
+      title: "Software Engineer Intern",
       logo: ParabolLogo,
       start: "11/2022",
       end: "02/2023",
       description:
-        "Developed multiple React projects using modern web techniques, integrating features like socket.io, state management, and API integration. Collaborated with developers, gaining knowledge of cutting-edge technologies. Implemented and maintained version control with Git for efficient collaboration. Kept accurate records of activities throughout the internship.",
+        "Assisted in developing and enhancing features for React and Node.js applications, collaborating with the team to troubleshoot bugs and improve application performance. Gained hands-on experience in frontend development, ensuring components met project requirements and delivered a seamless user experience.",
     },
     
   ],
   skills: [
-    "JavaScript",
-    "TypeScript",
+    "GO",
+    "JavaScript/TypeScript",
     "Python",
-    "React/Next.js/React-Native",
+    "Next.js/React/React-Native",
     "Redux",
-    "MongoDB/PostgresSQL",
-    "Prisma",
+    "DynamoDB/SQL",
     "Node.js",
     "TailwindCSS",
     "SocketIO",
@@ -96,8 +95,8 @@ export const RESUME_DATA = {
     "Git",
     "GitHub Actions",
     "Nginx",
-    "Jira",
-   
+    "AWS(EC2, S3, RDS, Lambda, CloudWatch)",
+    "Terraform",
   ],
   softSkills: [
     "Communication",
@@ -111,6 +110,30 @@ export const RESUME_DATA = {
 
   ],
   projects: [
+    {
+      title: "Cloud Resume Challenge",
+      techStack: [
+        "Full Stack Developer",
+        "Next.js",
+        "TailwindCSS",
+        "Node.js",
+        "DynamoDB",
+        "Git",
+        "GitHub Actions",
+        "AWS",
+        "Terraform",
+        "Lambda",
+        "S3",
+        "GO",
+      ],
+      description:
+        "A cross-platform solution for web and mobile offering ticketing, real-time updates, client tracking, analytics, chat, notifications, and more.",
+      logo: ParabolLogo,
+      link: {
+        label: "github.com",
+        href: "https://cloudresume.rishabhsingh.com.np/",
+      },
+    },
     {
       title: "Support Desk",
       techStack: [
@@ -130,29 +153,10 @@ export const RESUME_DATA = {
       logo: ParabolLogo,
       link: {
         label: "github.com",
-        href: "https://supportdesk.dryicesolutions.net/",
+        href: "https://github.com/Rish4bh0/support-/",
       },
     },
-    {
-      title: "Finance SaaS",
-      techStack: [
-        "Side Project",
-        "TypeScript",
-        "Next.js",
-        "TailwindCSS",
-        "Bun",
-        "Hono.js",
-        "PostgresSQL",
-        "Prisma",
-      ],
-      description:
-        "Finance SaaS platform tracks income, expenses, categorizes transactions, connects to banks, and enhances financial management.",
-      logo: EvercastLogo,
-      link: {
-        label: "Finance SaaS",
-        href: "https://spamdetection.rishabhsingh.com.np",
-      },
-    },
+   
     
     /*
     {

@@ -233,7 +233,7 @@ export default function Page() {
               <Card className ="print:text-[12px]" key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base print:text-[12px]">
-                    <h3 className="font-semibold leading-none print:text-[12px]">
+                    <h3 className="font-mono text-sm leading-none print:text-[11px]">
                       {education.school}
                     </h3>
                     <div className="text-sm text-gray-500 print:text-[10px]">
@@ -243,7 +243,7 @@ export default function Page() {
                 </CardHeader>
                 <CardContent className="mt-2 print:text-[12px]">
                   {education.degree && <p className="text-pretty font-mono  text-xs print:text-[11px] text-muted-foreground">{education.degree}</p>}
-                 {education.courseWork && <p className="text-pretty font-mono  text-muted-foreground text-xs print:text-[11px]">{education.courseWork}</p>}
+                {/* {education.courseWork && <p className="text-pretty font-mono  text-muted-foreground text-xs print:text-[11px]">{education.courseWork}</p>}*/}
                 </CardContent>
               </Card>
             );
